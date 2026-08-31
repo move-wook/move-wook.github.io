@@ -238,10 +238,24 @@ a {
   gap: 16px;
 }
 
+/* <a>가 grid 아이템 크기 계산에 끼어들지 않도록 함 (실제 아이템은 .project-card) */
+.card-link {
+  display: contents;
+  text-decoration: none;
+  color: inherit;
+}
+
 .project-card {
   border: 1px solid #eee;
   border-radius: 8px;
   padding: 18px;
+  transition: box-shadow .15s ease, transform .15s ease;
+}
+
+.card-link:hover .project-card {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+  transform: translateY(-2px);
+  cursor: pointer;
 }
 
 .project-card h3 {
@@ -296,4 +310,65 @@ a {
   .nav-links {
     display: none;
   }
+}
+
+/* ------------------------------------------------------------
+   프로젝트 상세 페이지 (projects/*.html)
+------------------------------------------------------------ */
+
+.detail {
+  padding: 48px 0 64px;
+}
+
+.detail-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.detail-company {
+  color: #888;
+  font-size: 13px;
+  margin: 0 0 6px;
+}
+
+.detail-inner h1 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+
+.detail-inner h2 {
+  font-size: 16px;
+  margin: 32px 0 10px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.detail-inner h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.detail-inner p,
+.detail-inner ul {
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+.detail-inner ul {
+  padding-left: 20px;
+}
+
+.detail-inner li {
+  margin-bottom: 6px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 32px;
+  font-size: 13px;
+  color: #555;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+  width: 100%;
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공통 메시지 중계 플랫폼 통합 | 임동욱</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">← 임동욱 포트폴리오</a>
+  </div>
+</nav>
+
+<article class="detail">
+  <div class="detail-inner">
+    <p class="detail-company">미라벨소프트</p>
+    <h1>공통 메시지 중계 플랫폼 통합</h1>
+    <div class="tag-row">
+      <span>Java</span><span>Spring Boot</span><span>REST API</span>
+    </div>
+
+    <h2>배경</h2>
+    <p>서비스에서 발송하는 SMS·알림톡·푸시가 4개 프로젝트에서 외부 문자 큐에 각자 접근하는
+    파편화된 구조로 운영되고 있었다. 정책이 바뀔 때마다 4개 프로젝트를 전부 수정해야 하는
+    비효율이 반복됐다.</p>
+
+    <h2>해결</h2>
+    <p>별도 요청이 있기 전에 이 반복되는 비효율을 먼저 인지하고, 사내에 공통 플랫폼으로의 확장을
+    직접 제안했다. Spring Boot 기반 REST API 중계 플랫폼으로 구조를 일원화하고, 요구정의부터 DB
+    설계, 통합 발송 API 개발까지 담당했다.</p>
+
+    <h2>결과</h2>
+    <p class="project-result">신규 프로젝트가 생기더라도 단일 API 호출만으로 메시지 발송이
+    가능해져 프로젝트 간 결합도가 대폭 감소</p>
+
+    <h2>사용 기술</h2>
+    <p>Java, Spring Boot, REST API</p>
+
+    <a class="back-link" href="../index.html#projects">← 프로젝트 목록으로</a>
+  </div>
+</article>
+
+</body>
+</html>

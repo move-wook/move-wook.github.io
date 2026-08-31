@@ -62,7 +62,9 @@
         <strong>미라벨소프트</strong>
         <span class="period">2024.07 ~ 2026.07 (2년 1개월)</span>
       </div>
-      <p>Java 기반 헬스케어 플랫폼 개발 및 운영</p>
+      <p>Java 기반 헬스케어 플랫폼에서 앱 API 서버, 고객용 웹페이지 및 서버, 어드민,
+      타 팀 연동용 API 인터페이스 서버까지 4~5개 시스템을 단독으로 개발·운영. 아래
+      프로젝트는 이 과정에서 진행한 대표 사례.</p>
     </div>
     <div class="timeline-item">
       <div class="timeline-head">
@@ -141,65 +143,79 @@
     <h2>프로젝트 <span class="section-note">(실무)</span></h2>
     <div class="project-grid" id="project-grid">
 
-      <article class="project-card" data-tags="Java Spring MyBatis MariaDB">
-        <h3>FCM 푸시 배치 성능 최적화</h3>
-        <p class="project-company">미라벨소프트</p>
-        <p>인덱스 부재로 인한 Table Full Scan과 Lock wait timeout이 원인이 된 배치 장애 분석 및 개선.
-        인덱스 재설계, 건별 트랜잭션 분리, CompletableFuture 기반 비동기 병렬 처리 적용.</p>
-        <p class="project-result">→ TPS 1.63 → 13.73 (8.4배), 1,000건 처리시간 10분 → 72초</p>
-        <div class="tag-row"><span>Java</span><span>Spring</span><span>MyBatis</span><span>MariaDB</span></div>
-      </article>
+      <a class="card-link" href="projects/fcm-batch-optimization.html">
+        <article class="project-card" data-tags="Java Spring MyBatis MariaDB">
+          <h3>FCM 푸시 배치 성능 최적화</h3>
+          <p class="project-company">미라벨소프트</p>
+          <p>인덱스 부재로 인한 Table Full Scan과 Lock wait timeout이 원인이 된 배치 장애 분석 및 개선.
+          인덱스 재설계, 건별 트랜잭션 분리, CompletableFuture 기반 비동기 병렬 처리 적용.</p>
+          <p class="project-result">→ TPS 1.63 → 13.73 (8.4배), 1,000건 처리시간 10분 → 72초</p>
+          <div class="tag-row"><span>Java</span><span>Spring</span><span>MyBatis</span><span>MariaDB</span></div>
+        </article>
+      </a>
 
-      <article class="project-card" data-tags="Java Spring RestAPI">
-        <h3>FCM 푸시 API 마이그레이션</h3>
-        <p class="project-company">미라벨소프트</p>
-        <p>Firebase API 변경 대응 및 신규 명세 기반 전환. 푸시 미수신 이슈 해결 및 API 구조 전환 주도.</p>
-        <div class="tag-row"><span>Java</span><span>Spring</span><span>REST API</span></div>
-      </article>
+      <a class="card-link" href="projects/fcm-api-migration.html">
+        <article class="project-card" data-tags="Java Spring RestAPI">
+          <h3>FCM 푸시 API 마이그레이션</h3>
+          <p class="project-company">미라벨소프트</p>
+          <p>Firebase API 변경 대응 및 신규 명세 기반 전환. 푸시 미수신 이슈 해결 및 API 구조 전환 주도.</p>
+          <div class="tag-row"><span>Java</span><span>Spring</span><span>REST API</span></div>
+        </article>
+      </a>
 
-      <article class="project-card" data-tags="Java SpringBoot RestAPI">
-        <h3>공통 메시지 중계 플랫폼 통합</h3>
-        <p class="project-company">미라벨소프트</p>
-        <p>4개 프로젝트가 외부 문자 큐에 각자 접근하던 파편화된 구조를 Spring Boot 기반 REST API
-        중계 플랫폼으로 일원화. 요구정의, DB 설계, 통합 발송 API 개발.</p>
-        <p class="project-result">→ 신규 프로젝트는 단일 API 호출만으로 메시지 발송 가능하도록 결합도 감소</p>
-        <div class="tag-row"><span>Java</span><span>Spring Boot</span><span>REST API</span></div>
-      </article>
+      <a class="card-link" href="projects/message-platform.html">
+        <article class="project-card" data-tags="Java SpringBoot RestAPI">
+          <h3>공통 메시지 중계 플랫폼 통합</h3>
+          <p class="project-company">미라벨소프트</p>
+          <p>4개 프로젝트가 외부 문자 큐에 각자 접근하던 파편화된 구조를 Spring Boot 기반 REST API
+          중계 플랫폼으로 일원화. 요구정의, DB 설계, 통합 발송 API 개발.</p>
+          <p class="project-result">→ 신규 프로젝트는 단일 API 호출만으로 메시지 발송 가능하도록 결합도 감소</p>
+          <div class="tag-row"><span>Java</span><span>Spring Boot</span><span>REST API</span></div>
+        </article>
+      </a>
 
-      <article class="project-card" data-tags="Linux">
-        <h3>Linux 서버 운영 자동화</h3>
-        <p class="project-company">미라벨소프트</p>
-        <p>Shell Script, CRON, SFTP 기반 파일 백업 및 디스크 사용량 모니터링(13개 서버, NAS).
-        인증서 갱신 알림 자동화로 유료 메일 API를 네이버 메일 API로 전환.</p>
-        <p class="project-result">→ 운영 비용 약 70% 절감</p>
-        <div class="tag-row"><span>Linux</span><span>Shell Script</span><span>CRON</span></div>
-      </article>
+      <a class="card-link" href="projects/linux-automation.html">
+        <article class="project-card" data-tags="Linux">
+          <h3>Linux 서버 운영 자동화</h3>
+          <p class="project-company">미라벨소프트</p>
+          <p>Shell Script, CRON, SFTP 기반 파일 백업 및 디스크 사용량 모니터링(13개 서버, NAS).
+          인증서 갱신 알림 자동화로 유료 메일 API를 네이버 메일 API로 전환.</p>
+          <p class="project-result">→ 운영 비용 약 70% 절감</p>
+          <div class="tag-row"><span>Linux</span><span>Shell Script</span><span>CRON</span></div>
+        </article>
+      </a>
 
-      <article class="project-card" data-tags="Java SpringBoot RestAPI JUnit5">
-        <h3>정부24 전자증명서 네이버 연동</h3>
-        <p class="project-company">라츠온</p>
-        <p>전자증명서 발급/저장/제출 등 행정기관 유통 업무를 네이버 앱과 연동. 네이버 연동처 API
-        설계 및 백엔드 기능 개발. 시퀀스 다이어그램·ERD 기반 요구사항 분석 및 구조 설계.</p>
-        <p class="project-result">→ 누적 가입자 350만 명 규모 서비스, JUnit5+Jacoco 테스트 커버리지 75% 이상 유지</p>
-        <div class="tag-row"><span>Java 11</span><span>Spring Boot</span><span>REST API</span><span>JUnit5</span></div>
-      </article>
+      <a class="card-link" href="projects/gov24-naver.html">
+        <article class="project-card" data-tags="Java SpringBoot RestAPI JUnit5">
+          <h3>정부24 전자증명서 네이버 연동</h3>
+          <p class="project-company">라츠온</p>
+          <p>전자증명서 발급/저장/제출 등 행정기관 유통 업무를 네이버 앱과 연동. 네이버 연동처 API
+          설계 및 백엔드 기능 개발. 시퀀스 다이어그램·ERD 기반 요구사항 분석 및 구조 설계.</p>
+          <p class="project-result">→ 누적 가입자 350만 명 규모 서비스, JUnit5+Jacoco 테스트 커버리지 75% 이상 유지</p>
+          <div class="tag-row"><span>Java 11</span><span>Spring Boot</span><span>REST API</span><span>JUnit5</span></div>
+        </article>
+      </a>
 
-      <article class="project-card" data-tags="Java SpringBoot jQuery">
-        <h3>전자증명서 백오피스 시스템</h3>
-        <p class="project-company">라츠온</p>
-        <p>전자증명서 서비스 운영을 위한 관리 기능 개발 및 유지보수. 카테고리 추가, 연동처 관리,
-        서비스 점검 기능 구현.</p>
-        <div class="tag-row"><span>Java</span><span>Spring Boot</span><span>jQuery</span></div>
-      </article>
+      <a class="card-link" href="projects/certificate-backoffice.html">
+        <article class="project-card" data-tags="Java SpringBoot jQuery">
+          <h3>전자증명서 백오피스 시스템</h3>
+          <p class="project-company">라츠온</p>
+          <p>전자증명서 서비스 운영을 위한 관리 기능 개발 및 유지보수. 카테고리 추가, 연동처 관리,
+          서비스 점검 기능 구현.</p>
+          <div class="tag-row"><span>Java</span><span>Spring Boot</span><span>jQuery</span></div>
+        </article>
+      </a>
 
-      <article class="project-card" data-tags="Java MyBatis MariaDB">
-        <h3>연세대학교 카드 발급 시스템 유지보수</h3>
-        <p class="project-company">라츠온 (2022.04 ~ 2023.12, 1인 담당)</p>
-        <p>학생·교직원 대상 카드 발급용 관리자 시스템 유지보수 및 기능 추가. 카드 발급 취소 시
-        DB Lock 발생 문제 확인 후 트랜잭션 미처리 원인 식별, 롤백 로직 추가로 해결.</p>
-        <p class="project-result">→ 단순/루틴 업무 효율화로 운영 시간 1시간 이상 단축</p>
-        <div class="tag-row"><span>Java</span><span>MyBatis</span><span>MariaDB</span></div>
-      </article>
+      <a class="card-link" href="projects/yonsei-card.html">
+        <article class="project-card" data-tags="Java MyBatis MariaDB">
+          <h3>연세대학교 카드 발급 시스템 유지보수</h3>
+          <p class="project-company">라츠온 (2022.04 ~ 2023.12, 1인 담당)</p>
+          <p>학생·교직원 대상 카드 발급용 관리자 시스템 유지보수 및 기능 추가. 카드 발급 취소 시
+          DB Lock 발생 문제 확인 후 트랜잭션 미처리 원인 식별, 롤백 로직 추가로 해결.</p>
+          <p class="project-result">→ 단순/루틴 업무 효율화로 운영 시간 1시간 이상 단축</p>
+          <div class="tag-row"><span>Java</span><span>MyBatis</span><span>MariaDB</span></div>
+        </article>
+      </a>
 
     </div>
   </div>

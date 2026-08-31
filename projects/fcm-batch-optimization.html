@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FCM 푸시 배치 성능 최적화 | 임동욱</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">← 임동욱 포트폴리오</a>
+  </div>
+</nav>
+
+<article class="detail">
+  <div class="detail-inner">
+    <p class="detail-company">미라벨소프트</p>
+    <h1>FCM 푸시 배치 성능 최적화</h1>
+    <div class="tag-row">
+      <span>Java</span><span>Spring</span><span>MyBatis</span><span>MariaDB</span><span>CompletableFuture</span>
+    </div>
+
+    <h2>배경</h2>
+    <p>약 3만 명을 대상으로 한 푸시 배치가 가동되자, 그와 별개여야 할 인증번호 문자 발송까지
+    함께 실패하는 장애가 발생했다.</p>
+
+    <h2>원인 분석</h2>
+    <p>조건절 인덱스 부재로 인한 Table Full Scan과 Lock wait timeout이 원인이었다. 대량 배치가
+    DB를 선점하면서 인증번호 발송 같은 핵심 실시간 트랜잭션까지 마비시키는 구조적 문제였다 —
+    대량 배치 처리와 실시간 트랜잭션이 같은 자원(DB 커넥션·락)을 두고 경쟁한 것.</p>
+
+    <h2>해결</h2>
+    <p>인덱스를 재설계하고 건별 트랜잭션을 분리해 락 간섭을 제거했다. Java 1.8 / Spring 4.1.x
+    레거시 환경이라 프레임워크 차원의 비동기 지원이 없어, <code>CompletableFuture.supplyAsync</code>
+    방식으로 비동기 병렬 처리 구조를 직접 구현했다. 이 과정에서 중복 발송, 스레드풀 격리 등
+    운영 중 실제로 터질 수 있는 위험 요소 7가지를 사전에 식별하고 방어 로직을 넣었다.</p>
+
+    <h2>결과</h2>
+    <p class="project-result">TPS 1.63 → 13.73 (8.4배 향상), 1,000건 처리시간 10분 → 72초로 단축</p>
+
+    <h2>사용 기술</h2>
+    <p>Java 1.8, Spring 4.1.x, MyBatis, MariaDB, CompletableFuture</p>
+
+    <a class="back-link" href="../index.html#projects">← 프로젝트 목록으로</a>
+  </div>
+</article>
+
+</body>
+</html>

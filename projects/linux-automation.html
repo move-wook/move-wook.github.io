@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linux 서버 운영 자동화 | 임동욱</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">← 임동욱 포트폴리오</a>
+  </div>
+</nav>
+
+<article class="detail">
+  <div class="detail-inner">
+    <p class="detail-company">미라벨소프트</p>
+    <h1>Linux 서버 운영 자동화</h1>
+    <div class="tag-row">
+      <span>Linux</span><span>Shell Script</span><span>CRON</span><span>SFTP</span><span>Slack API</span>
+    </div>
+
+    <h2>배경</h2>
+    <p>인증서 만료 안내를 담당자가 수동으로 확인하고 공지하는 방식이라 누락 위험이 컸고,
+    백업도 주기적인 수작업에 의존하고 있었다. 디스크 사용량 역시 사후에 발견되는 경우가
+    많아 스토리지 포화로 인한 장애 가능성이 있었다.</p>
+
+    <h2>해결</h2>
+    <ul>
+      <li>인증서 만료일을 DB 기반으로 자동 추적·발송하는 파이프라인을 구축하고, 유료 메일 API를
+      네이버 메일 API로 전환</li>
+      <li>Shell Script, CRON, SFTP 기반의 백업 자동화 파이프라인을 구축 — 일자별 압축 분할 및
+      보관 주기 관리 로직 적용 (13개 서버, NAS 대상)</li>
+      <li>디스크 사용률 구간별(60% 주의 / 70% 경고 / 80% 위험) 실시간 Slack 알림 체계를 구축해
+      사후 수습이 아닌 사전 차단 구조로 전환</li>
+    </ul>
+
+    <h2>결과</h2>
+    <p class="project-result">반복 CS 업무 제거, 메시지 운영비 약 70% 절감, 스토리지 포화로 인한
+    장애 사전 차단</p>
+
+    <h2>사용 기술</h2>
+    <p>Linux, Shell Script, CRON, SFTP, Slack API, 네이버 메일 API</p>
+
+    <a class="back-link" href="../index.html#projects">← 프로젝트 목록으로</a>
+  </div>
+</article>
+
+</body>
+</html>
