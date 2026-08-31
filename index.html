@@ -17,7 +17,7 @@
       <li><a href="#certs">자격증</a></li>
       <li><a href="#stack">기술 스택</a></li>
       <li><a href="#projects">프로젝트</a></li>
-      <li><a href="#side-projects">개인 프로젝트</a></li>
+      <li><a href="#education">교육사항</a></li>
     </ul>
   </div>
 </nav>
@@ -120,19 +120,19 @@
     </div>
 
     <h3 class="sub-heading">학습 (Loop:Pak 백엔드 부트캠프, 실무 미적용)</h3>
-    <div class="stack-list" id="stack-filters-learning">
-      <button class="stack-tag" data-tag="AI협업">AI 협업개발</button>
-      <button class="stack-tag" data-tag="TDD">TDD</button>
-      <button class="stack-tag" data-tag="도메인모델링">도메인 모델링</button>
-      <button class="stack-tag" data-tag="객체지향">객체지향 설계</button>
-      <button class="stack-tag" data-tag="트랜잭션락">트랜잭션·락 전략</button>
-      <button class="stack-tag" data-tag="DB인덱스">DB 인덱스</button>
-      <button class="stack-tag" data-tag="Redis">Redis</button>
-      <button class="stack-tag" data-tag="Kafka">Kafka</button>
-      <button class="stack-tag" data-tag="Resilience">Resilience</button>
-      <button class="stack-tag" data-tag="배치처리">배치 처리</button>
+    <div class="stack-list">
+      <span class="tag-badge">AI 협업개발</span>
+      <span class="tag-badge">TDD</span>
+      <span class="tag-badge">도메인 모델링</span>
+      <span class="tag-badge">객체지향 설계</span>
+      <span class="tag-badge">트랜잭션·락 전략</span>
+      <span class="tag-badge">DB 인덱스</span>
+      <span class="tag-badge">Redis</span>
+      <span class="tag-badge">Kafka</span>
+      <span class="tag-badge">Resilience</span>
+      <span class="tag-badge">배치 처리</span>
     </div>
-    <p class="hint">※ 위 태그를 클릭하면 아래 프로젝트 목록이 필터링됩니다. "학습" 태그는 개인 프로젝트에만 매칭됩니다.</p>
+    <p class="hint">※ "실무 적용" 태그를 클릭하면 아래 프로젝트 목록이 필터링됩니다. "학습" 항목은 참고용이며, 자세한 내용은 <a href="#education">교육사항</a>을 참고하세요.</p>
   </div>
 </section>
 
@@ -205,46 +205,17 @@
   </div>
 </section>
 
-<section class="section" id="side-projects">
+<section class="section" id="education">
   <div class="section-inner">
-    <h2>개인 프로젝트 <span class="section-note">(Loop:Pak 백엔드 부트캠프 수료, 2026.01.31 ~ 2026.04.19 · 미라벨소프트 재직 중 병행 수강)</span></h2>
-    <div class="project-grid" id="side-project-grid">
-
-      <article class="project-card" data-tags="AI협업 TDD API명세 도메인모델링 객체지향">
-        <h3>AI 협업 개발 흐름과 도메인 설계</h3>
-        <p>AI를 단순 도구가 아닌 개발 에이전트로 활용하는 협업 흐름을 실습. 요구사항을 기능 단위가
-        아닌 도메인 관점으로 해석·구조화하고, API 명세를 먼저 정의한 뒤 이를 기준으로 서버 구조를
-        설계. 도메인 모델과 객체 책임을 나누는 객체지향 설계 연습과, TDD로 설계 의도를 코드로
-        검증하는 개발 흐름을 경험.</p>
-        <div class="tag-row"><span>AI 협업개발</span><span>TDD</span><span>API 명세</span><span>도메인 모델링</span><span>객체지향 설계</span></div>
-      </article>
-
-      <article class="project-card" data-tags="트랜잭션락 DB인덱스 Redis">
-        <h3>데이터 정합성과 성능</h3>
-        <p>단순 CRUD를 넘어 트래픽 증가 시 발생하는 데이터 문제를 가정하고, 트랜잭션 경계 설정과
-        락 전략으로 동시성 이슈에 대응하는 방법을 실습. 조회 패턴 기준 인덱스 설계와 성능
-        비교·분석, 캐시 도입 시 발생하는 데이터 정합성 문제와 RDB 중심 구조에서 Redis를
-        보조적으로 활용하는 설계를 경험.</p>
-        <div class="tag-row"><span>RDBMS 트랜잭션</span><span>락 전략</span><span>DB 인덱스</span><span>Redis 캐시</span></div>
-      </article>
-
-      <article class="project-card" data-tags="Resilience Kafka">
-        <h3>안정성과 확장 구조</h3>
-        <p>장애를 예외가 아닌 전제로 두고 시스템 구조를 재설계하는 관점을 실습. 기능 단위 책임
-        분리로 장애 전파를 최소화하고, 동기 처리의 한계를 이해한 뒤 비동기 이벤트 기반 구조로
-        전환. Kafka를 활용한 이벤트 발행·소비 구조와, 처리량 증가 상황에서의 확장 시뮬레이션을
-        경험.</p>
-        <div class="tag-row"><span>Resilience</span><span>장애 격리</span><span>Kafka</span><span>비동기 이벤트 처리</span></div>
-      </article>
-
-      <article class="project-card" data-tags="Redis 배치처리">
-        <h3>집계와 운영 설계</h3>
-        <p>실시간 처리만으로 해결되지 않는 문제를 운영 관점에서 재해석. Redis를 활용한 랭킹·집계
-        구조 설계, 배치 프로세스를 통한 데이터 정합성·성능 보완을 실습. 운영 중 발생하는 데이터
-        누락·지연 상황에 대한 대응 전략과, 여러 서비스가 공존하는 운영 구조를 다룸.</p>
-        <div class="tag-row"><span>Redis 집계</span><span>배치 처리</span><span>운영 설계</span></div>
-      </article>
-
+    <h2>교육사항</h2>
+    <div class="timeline-item">
+      <div class="timeline-head">
+        <strong>Loop:Pak 백엔드 부트캠프</strong>
+        <span class="period">2026.01.31 ~ 2026.04.19 · 미라벨소프트 재직 중 병행 수강</span>
+      </div>
+      <p>AI 협업 개발 흐름, 도메인 모델링, 객체지향 설계, TDD, 트랜잭션·락 전략, DB 인덱스,
+      Redis 캐시·집계, Kafka 기반 비동기 이벤트 처리, 장애 격리(Resilience), 배치·운영 설계를
+      다룬 10주 커리큘럼 수료.</p>
     </div>
   </div>
 </section>

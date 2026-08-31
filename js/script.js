@@ -1,4 +1,4 @@
-// 기술 스택 태그 클릭 -> 프로젝트/개인 프로젝트 카드 필터링
+// 기술 스택(실무 적용) 태그 클릭 -> 프로젝트 카드 필터링
 document.addEventListener('DOMContentLoaded', () => {
   const filterButtons = document.querySelectorAll('.stack-tag');
   const allCards = document.querySelectorAll('.project-card');

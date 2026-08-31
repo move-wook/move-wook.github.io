@@ -214,6 +214,17 @@ a {
   border-color: #222;
 }
 
+/* 클릭 안 되는 정적 배지 (학습 항목 등, 필터링 대상 아님) */
+.tag-badge {
+  display: inline-block;
+  border: 1px solid #eee;
+  background: #f7f7f7;
+  color: #888;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
 .hint {
   font-size: 12px;
   color: #999;
