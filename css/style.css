@@ -64,6 +64,22 @@ a {
   border-bottom: 1px solid #eee;
 }
 
+.profile-flex {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+
 .profile h1 {
   margin: 0 0 4px;
   font-size: 28px;
