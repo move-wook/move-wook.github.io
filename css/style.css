@@ -1,0 +1,272 @@
+/* ------------------------------------------------------------
+   최소 베이스라인 스타일. 디자인 폴리싱은 별도 작업으로 미룸.
+   목적: 구조를 읽기 쉽게 보여주는 정도까지만.
+------------------------------------------------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section-inner,
+.nav-inner,
+.profile-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* nav */
+.nav {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 10;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.nav-logo {
+  font-weight: 700;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+/* profile header */
+.profile {
+  padding: 56px 0 32px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+
+.en-name {
+  font-weight: 400;
+  color: #888;
+  font-size: 16px;
+}
+
+.role {
+  color: #555;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.tagline {
+  color: #444;
+  max-width: 520px;
+}
+
+.contact {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+}
+
+/* generic section */
+.section {
+  padding: 40px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.section h2 {
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+
+.section-note {
+  font-weight: 400;
+  color: #888;
+  font-size: 14px;
+}
+
+.sub-heading {
+  font-size: 15px;
+  color: #666;
+  margin: 24px 0 10px;
+}
+
+/* career timeline */
+.timeline-item {
+  padding: 12px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.timeline-item:first-of-type {
+  border-top: none;
+}
+
+.timeline-head {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.timeline-head strong {
+  font-size: 15px;
+}
+
+.period {
+  color: #888;
+  font-size: 13px;
+}
+
+/* certs */
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cert-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-top: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.cert-list li:first-child {
+  border-top: none;
+}
+
+.cert-date {
+  color: #888;
+}
+
+.cert-date.badge {
+  color: #a15c00;
+  background: #fff3e0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* stack filter buttons */
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.stack-tag {
+  border: 1px solid #ddd;
+  background: #fafafa;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.stack-tag.active {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+.hint {
+  font-size: 12px;
+  color: #999;
+  margin-top: 8px;
+}
+
+/* project cards */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.project-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.project-card h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.project-company {
+  color: #888;
+  font-size: 12px;
+  margin: 0 0 10px;
+}
+
+.project-card p {
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+
+.project-result {
+  color: #0a6b2c;
+  font-weight: 600;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.tag-row span {
+  font-size: 11px;
+  background: #f2f2f2;
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: #555;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+/* footer */
+.footer {
+  text-align: center;
+  padding: 24px;
+  color: #999;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+}
