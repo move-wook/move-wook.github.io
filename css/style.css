@@ -119,7 +119,12 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .sheet-label { display: none; }
 
 /* ---- profile header ---- */
-.profile { padding: 56px 0 8px; }
+.profile {
+  padding: 64px 0 40px;
+  background: linear-gradient(180deg, var(--accent-soft), transparent);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
 .profile-flex { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
 .profile-photo {
   width: 104px; height: 104px; border-radius: 50%; object-fit: cover;
@@ -146,7 +151,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   padding-left: 20px;
 }
 .spec-cell:first-child { border-left: none; padding-left: 0; }
-.stat-value { display: block; font-size: 1.6rem; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.stat-value { display: block; font-size: 1.7rem; font-weight: 800; color: var(--accent-ink); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 .stat-label { font-size: 0.72rem; color: var(--ink-muted); letter-spacing: 0.02em; }
 
 /* ---- generic section ---- */
