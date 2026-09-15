@@ -32,12 +32,48 @@
     직접 제안했다. Spring Boot 기반 REST API 중계 플랫폼으로 구조를 일원화하고, 요구정의부터 DB
     설계, 통합 발송 API 개발까지 담당했다.</p>
 
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 720 300" role="img" aria-label="메시지 발송 구조 일원화 전후 비교 다이어그램">
+        <text x="360" y="20" class="svg-text label" text-anchor="middle">BEFORE — 개별 접근</text>
+        <rect x="30" y="34" width="120" height="32" rx="3" class="svg-box warn"></rect><text x="90" y="55" class="svg-text" text-anchor="middle" style="font-size:11px">프로젝트 A</text>
+        <rect x="200" y="34" width="120" height="32" rx="3" class="svg-box warn"></rect><text x="260" y="55" class="svg-text" text-anchor="middle" style="font-size:11px">프로젝트 B</text>
+        <rect x="370" y="34" width="120" height="32" rx="3" class="svg-box warn"></rect><text x="430" y="55" class="svg-text" text-anchor="middle" style="font-size:11px">프로젝트 C</text>
+        <rect x="540" y="34" width="120" height="32" rx="3" class="svg-box warn"></rect><text x="600" y="55" class="svg-text" text-anchor="middle" style="font-size:11px">프로젝트 D</text>
+        <rect x="255" y="104" width="200" height="34" rx="3" class="svg-box warn"></rect>
+        <text x="355" y="125" class="svg-text" text-anchor="middle">외부 문자 큐</text>
+        <line x1="90" y1="66" x2="330" y2="104" class="svg-line warn dashed"></line>
+        <line x1="260" y1="66" x2="345" y2="104" class="svg-line warn dashed"></line>
+        <line x1="430" y1="66" x2="370" y2="104" class="svg-line warn dashed"></line>
+        <line x1="600" y1="66" x2="385" y2="104" class="svg-line warn dashed"></line>
+        <text x="355" y="152" class="svg-text muted" text-anchor="middle">정책 변경 시 4곳을 개별 수정</text>
+        <line x1="20" y1="172" x2="700" y2="172" stroke="var(--border)" stroke-width="1"></line>
+        <text x="360" y="196" class="svg-text label" text-anchor="middle">AFTER — 공통 플랫폼</text>
+        <rect x="30" y="210" width="120" height="30" rx="3" class="svg-box good"></rect><text x="90" y="229" class="svg-text" text-anchor="middle" style="font-size:11px">프로젝트 A</text>
+        <rect x="200" y="210" width="120" height="30" rx="3" class="svg-box good"></rect><text x="260" y="229" class="svg-text" text-anchor="middle" style="font-size:11px">프로젝트 B</text>
+        <rect x="370" y="210" width="120" height="30" rx="3" class="svg-box good"></rect><text x="430" y="229" class="svg-text" text-anchor="middle" style="font-size:11px">프로젝트 C</text>
+        <rect x="540" y="210" width="120" height="30" rx="3" class="svg-box good"></rect><text x="600" y="229" class="svg-text" text-anchor="middle" style="font-size:11px">프로젝트 D</text>
+        <defs><marker id="a2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="currentColor"></path></marker></defs>
+        <line x1="90" y1="240" x2="330" y2="262" class="svg-line good" marker-end="url(#a2)" style="color:var(--good)"></line>
+        <line x1="260" y1="240" x2="345" y2="262" class="svg-line good" marker-end="url(#a2)" style="color:var(--good)"></line>
+        <line x1="430" y1="240" x2="370" y2="262" class="svg-line good" marker-end="url(#a2)" style="color:var(--good)"></line>
+        <line x1="600" y1="240" x2="385" y2="262" class="svg-line good" marker-end="url(#a2)" style="color:var(--good)"></line>
+        <rect x="255" y="264" width="200" height="30" rx="3" class="svg-box accent"></rect>
+        <text x="355" y="283" class="svg-text" text-anchor="middle">공통 REST API 플랫폼</text>
+      </svg>
+      <div class="diagram-caption">4개 프로젝트의 개별 큐 접근(BEFORE) → 공통 REST API 플랫폼으로 일원화(AFTER)</div>
+    </div>
+
     <h2>결과</h2>
     <p class="project-result">신규 프로젝트가 생기더라도 단일 API 호출만으로 메시지 발송이
     가능해져 프로젝트 간 결합도가 대폭 감소</p>
 
     <h2>사용 기술</h2>
     <p>Java, Spring Boot, REST API</p>
+
+    <div class="reflection">
+      <span class="label">느낀 점</span>
+      겉으로 다르게 보이던 문제들을 근본 원인 하나로 정리했을 때 비로소 안정적인 구조가 나온다는 것을 이 경험으로 확인했습니다.
+    </div>
 
     <a class="back-link" href="../index.html#projects">← 프로젝트 목록으로</a>
   </div>

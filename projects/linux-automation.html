@@ -37,12 +37,45 @@
       사후 수습이 아닌 사전 차단 구조로 전환</li>
     </ul>
 
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 700 220" role="img" aria-label="인프라 자동화 파이프라인 다이어그램">
+        <defs><marker id="a4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="currentColor"></path></marker></defs>
+        <text x="10" y="26" class="svg-text label">인증서 알림</text>
+        <rect x="10" y="34" width="140" height="34" rx="3" class="svg-box"></rect><text x="80" y="55" class="svg-text" text-anchor="middle" style="font-size:11px">만료일 DB 추적</text>
+        <line x1="150" y1="51" x2="184" y2="51" class="svg-line" marker-end="url(#a4)"></line>
+        <rect x="186" y="34" width="140" height="34" rx="3" class="svg-box"></rect><text x="256" y="55" class="svg-text" text-anchor="middle" style="font-size:11px">임계 시점 판단</text>
+        <line x1="326" y1="51" x2="360" y2="51" class="svg-line good" marker-end="url(#a4)" style="color:var(--good)"></line>
+        <rect x="362" y="34" width="150" height="34" rx="3" class="svg-box good"></rect><text x="437" y="55" class="svg-text" text-anchor="middle" style="font-size:11px">자동 알림 발송</text>
+        <text x="600" y="55" class="svg-text stat" style="font-size:12px">-70% 운영비</text>
+        <text x="10" y="98" class="svg-text label">백업 파이프라인</text>
+        <rect x="10" y="106" width="120" height="34" rx="3" class="svg-box"></rect><text x="70" y="127" class="svg-text" text-anchor="middle" style="font-size:11px">CRON 트리거</text>
+        <line x1="130" y1="123" x2="160" y2="123" class="svg-line" marker-end="url(#a4)"></line>
+        <rect x="162" y="106" width="120" height="34" rx="3" class="svg-box"></rect><text x="222" y="127" class="svg-text" text-anchor="middle" style="font-size:11px">압축/분할</text>
+        <line x1="282" y1="123" x2="312" y2="123" class="svg-line" marker-end="url(#a4)"></line>
+        <rect x="314" y="106" width="120" height="34" rx="3" class="svg-box"></rect><text x="374" y="127" class="svg-text" text-anchor="middle" style="font-size:11px">SFTP 전송</text>
+        <line x1="434" y1="123" x2="464" y2="123" class="svg-line good" marker-end="url(#a4)" style="color:var(--good)"></line>
+        <rect x="466" y="106" width="140" height="34" rx="3" class="svg-box good"></rect><text x="536" y="127" class="svg-text" text-anchor="middle" style="font-size:11px">노후 파일 자동삭제</text>
+        <text x="10" y="170" class="svg-text label">디스크 모니터링</text>
+        <rect x="10" y="178" width="140" height="34" rx="3" class="svg-box"></rect><text x="80" y="199" class="svg-text" text-anchor="middle" style="font-size:11px">사용률 실시간 체크</text>
+        <line x1="150" y1="195" x2="184" y2="195" class="svg-line warn" marker-end="url(#a4)" style="color:var(--warn)"></line>
+        <rect x="186" y="178" width="160" height="34" rx="3" class="svg-box warn"></rect><text x="266" y="199" class="svg-text" text-anchor="middle" style="font-size:11px">60/70/80% 임계 분기</text>
+        <line x1="346" y1="195" x2="380" y2="195" class="svg-line good" marker-end="url(#a4)" style="color:var(--good)"></line>
+        <rect x="382" y="178" width="150" height="34" rx="3" class="svg-box good"></rect><text x="457" y="199" class="svg-text" text-anchor="middle" style="font-size:11px">Slack Webhook 알림</text>
+      </svg>
+      <div class="diagram-caption">인증서 만료 알림 · 백업 파이프라인 · 디스크 임계치 모니터링 — 3개의 병렬 자동화 라인</div>
+    </div>
+
     <h2>결과</h2>
     <p class="project-result">반복 CS 업무 제거, 메시지 운영비 약 70% 절감, 스토리지 포화로 인한
     장애 사전 차단</p>
 
     <h2>사용 기술</h2>
     <p>Linux, Shell Script, CRON, SFTP, Slack API, 네이버 메일 API</p>
+
+    <div class="reflection">
+      <span class="label">느낀 점</span>
+      사람이 반복적으로 감당하던 수작업이나 비효율을 발견하면, 이를 자동화된 구조로 전환하는 데서 강점을 느낍니다. 겉으로 잘 드러나지 않는 리스크를 먼저 찾아내는 습관이 이후 모든 업무의 기본기가 되었습니다.
+    </div>
 
     <a class="back-link" href="../index.html#projects">← 프로젝트 목록으로</a>
   </div>

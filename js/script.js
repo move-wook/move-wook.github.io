@@ -36,3 +36,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// 스크롤 위치에 따라 네비게이션 현재 섹션 하이라이트
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = Array.from(navLinks)
+    .map((a) => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  if (!('IntersectionObserver' in window) || sections.length === 0) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const id = `#${entry.target.id}`;
+        navLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === id));
+      });
+    },
+    { rootMargin: '-45% 0px -50% 0px' }
+  );
+
+  sections.forEach((s) => observer.observe(s));
+});

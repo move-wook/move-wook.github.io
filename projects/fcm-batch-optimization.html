@@ -37,11 +37,50 @@
     방식으로 비동기 병렬 처리 구조를 직접 구현했다. 이 과정에서 중복 발송, 스레드풀 격리 등
     운영 중 실제로 터질 수 있는 위험 요소 7가지를 사전에 식별하고 방어 로직을 넣었다.</p>
 
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 720 260" role="img" aria-label="FCM 배치 처리 구조 개선 전후 비교 다이어그램">
+        <defs><marker id="a1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="currentColor"></path></marker></defs>
+        <text x="90" y="24" class="svg-text label" text-anchor="middle">BEFORE</text>
+        <rect x="20" y="36" width="150" height="38" rx="3" class="svg-box warn"></rect>
+        <text x="95" y="59" class="svg-text" text-anchor="middle">배치 스케줄러</text>
+        <line x1="95" y1="74" x2="95" y2="100" class="svg-line warn" marker-end="url(#a1)" style="color:var(--warn)"></line>
+        <rect x="20" y="102" width="150" height="38" rx="3" class="svg-box warn"></rect>
+        <text x="95" y="125" class="svg-text" text-anchor="middle">DB Full Scan</text>
+        <line x1="95" y1="140" x2="95" y2="166" class="svg-line warn" marker-end="url(#a1)" style="color:var(--warn)"></line>
+        <rect x="20" y="168" width="150" height="38" rx="3" class="svg-box warn"></rect>
+        <text x="95" y="191" class="svg-text" text-anchor="middle">Lock 장기 점유</text>
+        <line x1="170" y1="187" x2="230" y2="187" class="svg-line warn dashed" marker-end="url(#a1)" style="color:var(--warn)"></line>
+        <rect x="232" y="168" width="140" height="38" rx="3" class="svg-box warn"></rect>
+        <text x="302" y="191" class="svg-text" text-anchor="middle">인증번호 발송 실패</text>
+        <line x1="392" y1="10" x2="392" y2="250" stroke="var(--border)" stroke-width="1"></line>
+        <text x="555" y="24" class="svg-text label" text-anchor="middle">AFTER</text>
+        <rect x="420" y="36" width="140" height="34" rx="3" class="svg-box good"></rect>
+        <text x="490" y="57" class="svg-text" text-anchor="middle">배치 스케줄러</text>
+        <line x1="490" y1="70" x2="490" y2="94" class="svg-line good" marker-end="url(#a1)" style="color:var(--good)"></line>
+        <rect x="420" y="96" width="140" height="34" rx="3" class="svg-box good"></rect>
+        <text x="490" y="117" class="svg-text" text-anchor="middle">인덱스 + 건별 트랜잭션</text>
+        <line x1="490" y1="130" x2="490" y2="154" class="svg-line good" marker-end="url(#a1)" style="color:var(--good)"></line>
+        <rect x="420" y="156" width="140" height="34" rx="3" class="svg-box good"></rect>
+        <text x="490" y="177" class="svg-text" text-anchor="middle">비동기 병렬 처리</text>
+        <line x1="560" y1="53" x2="600" y2="53" class="svg-line good dashed" marker-end="url(#a1)" style="color:var(--good)"></line>
+        <rect x="602" y="36" width="102" height="34" rx="3" class="svg-box accent"></rect>
+        <text x="653" y="57" class="svg-text" text-anchor="middle" style="font-size:10.5px">우선순위 발송</text>
+        <text x="490" y="230" class="svg-text stat" text-anchor="middle">TPS 1.63 → 13.73 (×8.4)</text>
+        <text x="490" y="248" class="svg-text muted" text-anchor="middle">처리시간 10분 → 72초 (1,000건 기준)</text>
+      </svg>
+      <div class="diagram-caption">조건절 인덱스 부재 + 단일 트랜잭션 구조(BEFORE) → 인덱스 재설계 + 건별 트랜잭션 분리 + 비동기 병렬 처리(AFTER)</div>
+    </div>
+
     <h2>결과</h2>
     <p class="project-result">TPS 1.63 → 13.73 (8.4배 향상), 1,000건 처리시간 10분 → 72초로 단축</p>
 
     <h2>사용 기술</h2>
     <p>Java 1.8, Spring 4.1.x, MyBatis, MariaDB, CompletableFuture</p>
+
+    <div class="reflection">
+      <span class="label">느낀 점</span>
+      증상이 아니라 구조적 원인을 진단하고, 레거시 프레임워크·동시성·트랜잭션 정합성 같은 여러 제약 조건 안에서 해결책을 설계하는 것이 제 핵심 역량이라는 걸 이 경험으로 확인했습니다.
+    </div>
 
     <a class="back-link" href="../index.html#projects">← 프로젝트 목록으로</a>
   </div>

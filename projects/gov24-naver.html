@@ -34,12 +34,43 @@
       <li>JUnit5 + Jacoco 기반 테스트 코드 작성</li>
     </ul>
 
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 700 300" role="img" aria-label="정부24-네이버 연동 시퀀스 다이어그램">
+        <text x="90" y="24" class="svg-text label" text-anchor="middle">네이버 앱</text>
+        <line x1="90" y1="34" x2="90" y2="280" class="svg-line dashed" stroke="var(--border)"></line>
+        <text x="350" y="24" class="svg-text label" text-anchor="middle">연동처 API (본인 개발)</text>
+        <line x1="350" y1="34" x2="350" y2="280" class="svg-line dashed" stroke="var(--border)"></line>
+        <text x="610" y="24" class="svg-text label" text-anchor="middle">정부24</text>
+        <line x1="610" y1="34" x2="610" y2="280" class="svg-line dashed" stroke="var(--border)"></line>
+        <defs><marker id="a3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="currentColor"></path></marker></defs>
+        <line x1="90" y1="60" x2="342" y2="60" class="svg-line" marker-end="url(#a3)"></line>
+        <text x="220" y="52" class="svg-text muted" text-anchor="middle">① 발급 요청</text>
+        <line x1="358" y1="96" x2="602" y2="96" class="svg-line" marker-end="url(#a3)"></line>
+        <text x="480" y="88" class="svg-text muted" text-anchor="middle">② 발급 데이터 조회</text>
+        <line x1="602" y1="132" x2="358" y2="132" class="svg-line dashed" marker-end="url(#a3)"></line>
+        <text x="480" y="124" class="svg-text muted" text-anchor="middle">③ 증명서 데이터 응답</text>
+        <line x1="342" y1="168" x2="98" y2="168" class="svg-line dashed" marker-end="url(#a3)"></line>
+        <text x="220" y="160" class="svg-text muted" text-anchor="middle">④ 발급 완료 응답</text>
+        <line x1="90" y1="204" x2="342" y2="204" class="svg-line" marker-end="url(#a3)"></line>
+        <text x="220" y="196" class="svg-text muted" text-anchor="middle">⑤ 제출 요청</text>
+        <line x1="358" y1="240" x2="602" y2="240" class="svg-line" marker-end="url(#a3)"></line>
+        <text x="480" y="232" class="svg-text muted" text-anchor="middle">⑥ 제출 처리</text>
+        <text x="350" y="270" class="svg-text stat" text-anchor="middle">시퀀스다이어그램 + ERD → 두 기관 공통 기준</text>
+      </svg>
+      <div class="diagram-caption">네이버 앱 ↔ 연동처 API ↔ 정부24 3자 간 발급·제출 흐름</div>
+    </div>
+
     <h2>결과</h2>
     <p class="project-result">누적 가입자 350만 명 규모 서비스 안정 운영, 테스트 커버리지 75%
     이상 유지</p>
 
     <h2>사용 기술</h2>
     <p>Java 11, Spring Boot, MyBatis, MariaDB, REST API, JUnit5, Jacoco, React.js</p>
+
+    <div class="reflection">
+      <span class="label">느낀 점</span>
+      협업에서 겪는 어려움의 상당수는 서로 다른 이해관계자가 같은 문서를 기준으로 소통하지 못하는 데서 온다는 것을, 그리고 문서화와 테스트가 그 간극을 좁히는 실질적인 도구라는 것을 배웠습니다.
+    </div>
 
     <a class="back-link" href="../index.html#projects">← 프로젝트 목록으로</a>
   </div>
